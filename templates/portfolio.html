@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krish Gupta | Portfolio</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-white dark:bg-gray-800 shadow-md z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Krish Gupta</h1>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#about" class="hover:text-blue-500">About</a>
+        <a href="#projects" class="hover:text-blue-500">Projects</a>
+        <a href="#resume" class="hover:text-blue-500">Resume</a>
+        <a href="#contact" class="hover:text-blue-500">Contact</a>
+        <button id="toggleDarkMode" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-lg">🌙</button>
+      </div>
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-lg">☰</button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden flex-col gap-4 px-6 pb-4 md:hidden">
+      <a href="#about" class="hover:text-blue-500">About</a>
+      <a href="#projects" class="hover:text-blue-500">Projects</a>
+      <a href="#resume" class="hover:text-blue-500">Resume</a>
+      <a href="#contact" class="hover:text-blue-500">Contact</a>
+      <button id="toggleDarkModeMobile" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-lg w-full text-left">🌙</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-[470px] flex items-center justify-center text-center px-6 pt-24">
+    <div data-aos="fade-up">
+      <img src="static/assets/passport.jpg" alt="Profile" class="w-40 h-40 mx-auto rounded-full shadow-lg mb-6" />
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">Hey, I'm Krish 👋</h2>
+      <p class="text-md sm:text-lg md:text-xl mb-6">A Computer Engineer passionate about AI/ML, Frontend Development, and Automation.</p>
+      <a href="#projects" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">View My Work</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-5xl mx-auto px-6 text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-6">About Me</h2>
+      <p class="text-lg leading-relaxed">
+        I'm a Third Year Computer Engineering student at Bharati Vidyapeeth College of Engineering, Pune.
+        I love building smart systems integrating IoT, Python, Machine Learning, Data Science, Frontend development and automation.
+        When I'm not coding, you can find me exploring new tech trends, hiking, or playing Cricket.
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-12">Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-right">
+          <img src="static/assets/cricket.jpg" alt="Project 1" class="rounded-lg mb-4" />
+          <h3 class="text-xl font-semibold mb-2"><a href="https://cricket-score-prediction-1-dy0s.onrender.com/" target="_blank" class="hover:text-blue-500">ODI Cricket Score Prediction Website ↗</a></h3>
+          <p>Predicts cricket match scores using historical data and machine learning.</p>
+        </div>
+
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-up">
+          <img src="static/assets/OIP.webp" alt="Project 2" class="rounded-lg mb-4" />
+          <h3 class="text-xl font-semibold mb-2">Jai Ambe Broadband Service</h3>
+          <p>This is the project I made for my jijas broadband service business.</p>
+        </div>
+
+        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-left">
+          <img src="static/assets/Fraud-Detection-Thumbnail.jpg" alt="Project 3" class="rounded-lg mb-4" />
+          <h3 class="text-xl font-semibold mb-2"><a href="https://razorpay-fraud-detection-kg.onrender.com/" target="_blank" class="hover:text-blue-500">Razorpay Fraud Detection ML Model ↗</a></h3>
+          <p>Detects fraudulent transactions using machine learning algorithms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-5xl mx-auto px-6 text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-6">Resume & Achievements</h2>
+      <p class="mb-6">Smart India Hackathon(2024) Finalist | AI & ML | First Rank in internal Smart India Hackathon</p>
+      <a href="KrishGupta_InternshalaResume (8).pdf" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition" target="_blank">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20">
+    <div class="max-w-5xl mx-auto px-6 text-center" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
+      <form action="/contact" method="POST" class="max-w-md w-full mx-auto space-y-4">
+        <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded-lg border dark:bg-gray-800 dark:border-gray-700" required />
+        <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded-lg border dark:bg-gray-800 dark:border-gray-700" required />
+        <textarea name="message" placeholder="Your Message" class="w-full p-3 rounded-lg border dark:bg-gray-800 dark:border-gray-700" rows="4" required></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm">
+    © 2025 Krish Gupta
+    <div class="flex justify-center mt-2 flex-wrap gap-2">
+      <a href="https://wa.me/7219570360" target="_blank" class="flex items-center gap-1">
+        <img src="https://th.bing.com/th/id/R.2e999afd5539964988836b831e9f6aac?rik=rTbGfI9WCyCqzQ&riu=http%3a%2f%2f3.bp.blogspot.com%2f-ezTfOgu3msI%2fURXOG7LXQpI%2fAAAAAAAAA4Q%2fNsMEuE9SZ_U%2fs1600%2fwhatsapp.png&ehk=a2CAQ5ZW0v0dyLq9QSc0iMWWEFIPvvwz3z2tj7mXGwQ%3d&risl=&pid=ImgRaw&r=0" alt="WhatsApp" class="w-6 h-6"/>
+        WhatsApp
+      </a>
+      <a href="https://github.com/kg0420" target="_blank" class="flex items-center gap-1">
+        <img src="https://th.bing.com/th/id/OIP.eoZPB2gfGH-1ckaL_JSZdwHaHg?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" class="w-6 h-6" alt="Github"/>
+        Github
+      </a>
+      <a href="https://www.linkedin.com/in/krish-gupta-2ab03829b/" target="_blank" class="flex items-center gap-1">
+        <img src="https://as2.ftcdn.net/jpg/03/96/56/19/1000_F_396561934_t1OwjMZHrVY211bHA5uUEAix0F1SyLci.jpg" class="w-6 h-6" alt="LinkedIn"/>
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="fixed top-24 right-6 z-50">
+        {% for category, message in messages %}
+          <div class="mb-2 px-4 py-2 rounded-lg text-white {% if category == 'success' %}bg-green-500{% else %}bg-red-500{% endif %}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% endwith %}
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Dark mode toggle
+    const toggleBtn = document.getElementById('toggleDarkMode');
+    const toggleBtnMobile = document.getElementById('toggleDarkModeMobile');
+    const html = document.documentElement;
+
+    function toggleDark() {
+      html.classList.toggle('dark');
+      toggleBtn.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
+      toggleBtnMobile.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
+    }
+
+    toggleBtn.addEventListener('click', toggleDark);
+    toggleBtnMobile.addEventListener('click', toggleDark);
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
