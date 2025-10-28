@@ -7,7 +7,7 @@
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <!-- AOS Animation -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
@@ -24,8 +24,8 @@
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold">Krish Gupta</h1>
       <div class="hidden md:flex items-center gap-6">
-        <a href="#about" class="hover:text-blue-500">About</a>
-        <a href="#projects" class="hover:text-blue-500">Projects</a>
+        <a href="/about" class="hover:text-blue-500">About</a>
+        <a href="/project" class="hover:text-blue-500">Projects</a>
         <a href="#resume" class="hover:text-blue-500">Resume</a>
         <a href="#contact" class="hover:text-blue-500">Contact</a>
         <button id="toggleDarkMode" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-lg">🌙</button>
@@ -35,8 +35,8 @@
     </div>
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden flex-col gap-4 px-6 pb-4 md:hidden">
-      <a href="#about" class="hover:text-blue-500">About</a>
-      <a href="#projects" class="hover:text-blue-500">Projects</a>
+      <a href="/about" class="hover:text-blue-500">About</a>
+      <a href="/project" class="hover:text-blue-500">Projects</a>
       <a href="#resume" class="hover:text-blue-500">Resume</a>
       <a href="#contact" class="hover:text-blue-500">Contact</a>
       <button id="toggleDarkModeMobile" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-lg w-full text-left">🌙</button>
@@ -46,7 +46,7 @@
   <!-- Hero Section -->
   <section id="home" class="min-h-[470px] flex items-center justify-center text-center px-6 pt-24">
     <div data-aos="fade-up">
-      <img src="static/assets/passport.jpg" alt="Profile" class="w-40 h-40 mx-auto rounded-full shadow-lg mb-6" />
+      <img src="static/assets/passport.jpg" alt="Profile" class="w-40 h-40 mx-auto rounded-full shadow-lg mb-6 hover:scale-105 transition-transform duration-300" />
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">Hey, I'm Krish 👋</h2>
       <p class="text-md sm:text-lg md:text-xl mb-6">A Computer Engineer passionate about AI/ML, Frontend Development, and Automation.</p>
       <a href="#projects" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">View My Work</a>
@@ -57,7 +57,7 @@
   <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
     <div class="max-w-5xl mx-auto px-6 text-center" data-aos="fade-up">
       <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <p class="text-lg leading-relaxed">
+      <p class="text-lg leading-relaxed ">
         I'm a Third Year Computer Engineering student at Bharati Vidyapeeth College of Engineering, Pune.
         I love building smart systems integrating IoT, Python, Machine Learning, Data Science, Frontend development and automation.
         When I'm not coding, you can find me exploring new tech trends, hiking, or playing Cricket.
@@ -71,14 +71,14 @@
       <h2 class="text-3xl font-bold mb-12">Projects</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-right">
-          <img src="static/assets/cricket.jpg" alt="Project 1" class="rounded-lg mb-4" />
+          <img src="static/assets/cricket.jpg" alt="Project 1" class="rounded-lg mb-4 object-cover mx-auto" />
           <h3 class="text-xl font-semibold mb-2"><a href="https://cricket-score-prediction-1-dy0s.onrender.com/" target="_blank" class="hover:text-blue-500">ODI Cricket Score Prediction Website ↗</a></h3>
           <p>Predicts cricket match scores using historical data and machine learning.</p>
         </div>
 
         <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-up">
-          <img src="static/assets/OIP.webp" alt="Project 2" class="rounded-lg mb-4" />
-          <h3 class="text-xl font-semibold mb-2">Jai Ambe Broadband Service</h3>
+          <img src="static/assets/OIP.webp" alt="Project 2" class="rounded-lg mb-4 object-cover mx-auto" />
+          <h3 class="text-xl font-semibold mb-2 "><a href="https://kg0420.github.io/Jay-Ambe-Broadband/ " class="hover:text-blue-500">Jay Ambe Broadband service ↗</a></h3>
           <p>This is the project I made for my jijas broadband service business.</p>
         </div>
 
@@ -96,7 +96,11 @@
     <div class="max-w-5xl mx-auto px-6 text-center" data-aos="fade-up">
       <h2 class="text-3xl font-bold mb-6">Resume & Achievements</h2>
       <p class="mb-6">Smart India Hackathon(2024) Finalist | AI & ML | First Rank in internal Smart India Hackathon</p>
-      <a href="KrishGupta_InternshalaResume (8).pdf" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition" target="_blank">Download Resume</a>
+      <a href="https://raw.githubusercontent.com/kg0420/My-Portfolio/main/templates/KrishGupta_InternshalaResume.pdf"
+         class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+         target="_blank">
+         Download Resume
+      </a>
     </div>
   </section>
 
@@ -116,22 +120,26 @@
   <!-- Footer -->
   <footer class="py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm">
     © 2025 Krish Gupta
-    <div class="flex justify-center mt-2 flex-wrap gap-2">
-      <a href="https://wa.me/7219570360" target="_blank" class="flex items-center gap-1">
-        <img src="https://th.bing.com/th/id/R.2e999afd5539964988836b831e9f6aac?rik=rTbGfI9WCyCqzQ&riu=http%3a%2f%2f3.bp.blogspot.com%2f-ezTfOgu3msI%2fURXOG7LXQpI%2fAAAAAAAAA4Q%2fNsMEuE9SZ_U%2fs1600%2fwhatsapp.png&ehk=a2CAQ5ZW0v0dyLq9QSc0iMWWEFIPvvwz3z2tj7mXGwQ%3d&risl=&pid=ImgRaw&r=0" alt="WhatsApp" class="w-6 h-6"/>
+    <div class="flex justify-center mt-2 flex-wrap gap-3">
+
+      <a href="https://wa.me/7219570360" target="_blank" class="flex items-center gap-1 hover:text-blue-500 hover:scale-110 transition-transform duration-300">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6 hover:scale-110 transition-transform duration-300" />
         WhatsApp
       </a>
-      <a href="https://github.com/kg0420" target="_blank" class="flex items-center gap-1">
-        <img src="https://th.bing.com/th/id/OIP.eoZPB2gfGH-1ckaL_JSZdwHaHg?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" class="w-6 h-6" alt="Github"/>
-        Github
+
+      <a href="https://github.com/kg0420" target="_blank" class="flex items-center gap-1 hover:text-blue-500 hover:scale-110 transition-transform duration-300">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="w-6 h-6 hover:scale-110 transition-transform duration-300" alt="GitHub" />
+        GitHub
       </a>
-      <a href="https://www.linkedin.com/in/krish-gupta-2ab03829b/" target="_blank" class="flex items-center gap-1">
-        <img src="https://as2.ftcdn.net/jpg/03/96/56/19/1000_F_396561934_t1OwjMZHrVY211bHA5uUEAix0F1SyLci.jpg" class="w-6 h-6" alt="LinkedIn"/>
+
+      <a href="https://www.linkedin.com/in/krish-gupta-2ab03829b/" target="_blank" class="flex items-center gap-1 hover:text-blue-500 hover:scale-110 transition-transform duration-300">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="w-6 h-6 hover:scale-110 transition-transform duration-300" alt="LinkedIn" />
         LinkedIn
       </a>
     </div>
   </footer>
-    {% with messages = get_flashed_messages(with_categories=true) %}
+
+    <!-- {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
       <div class="fixed top-24 right-6 z-50">
         {% for category, message in messages %}
@@ -141,33 +149,57 @@
         {% endfor %}
       </div>
     {% endif %}
-    {% endwith %}
+    {% endwith %} -->
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+  };
 
-    // Dark mode toggle
-    const toggleBtn = document.getElementById('toggleDarkMode');
-    const toggleBtnMobile = document.getElementById('toggleDarkModeMobile');
-    const html = document.documentElement;
+  AOS.init();
 
-    function toggleDark() {
-      html.classList.toggle('dark');
-      toggleBtn.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
-      toggleBtnMobile.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
-    }
+  // Select elements
+  const toggleBtn = document.getElementById('toggleDarkMode');
+  const toggleBtnMobile = document.getElementById('toggleDarkModeMobile');
+  const html = document.documentElement;
 
-    toggleBtn.addEventListener('click', toggleDark);
-    toggleBtnMobile.addEventListener('click', toggleDark);
+  // Load saved theme from localStorage
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    html.classList.add('dark');
+  } else {
+    html.classList.remove('dark');
+  }
 
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  </script>
+  // Update icon based on current mode
+  function updateIcons() {
+    const isDark = html.classList.contains('dark');
+    toggleBtn.textContent = isDark ? '☀️' : '🌙';
+    toggleBtnMobile.textContent = isDark ? '☀️' : '🌙';
+  }
+
+  updateIcons(); // Set correct icons on load
+
+  // Toggle dark mode and save preference
+  function toggleDark() {
+    html.classList.toggle('dark');
+    const theme = html.classList.contains('dark') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+    updateIcons();
+  }
+
+  toggleBtn.addEventListener('click', toggleDark);
+  toggleBtnMobile.addEventListener('click', toggleDark);
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
 </body>
 </html>
