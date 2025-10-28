@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, flash
 import smtplib
 from email.message import EmailMessage
 
+
 app = Flask(__name__)
 app.secret_key = "Krish123"  # Used for flash messages
 
@@ -35,6 +36,15 @@ def contact():
         flash(f"Error sending message: {e}", "error")
 
     return redirect("/")
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route("/project")
+def project():
+    return render_template("project.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
