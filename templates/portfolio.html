@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Krish Gupta | Portfolio</title>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+{% extends "base.html" %}
+{% block title %}Home | Krish Gupta{% endblock %}
+{% block content %}
 
   <style>
     html {
@@ -27,7 +18,7 @@
         <a href="/about" class="hover:text-blue-500">About</a>
         <a href="/project" class="hover:text-blue-500">Projects</a>
         <a href="#resume" class="hover:text-blue-500">Resume</a>
-        <a href="#contact" class="hover:text-blue-500">Contact</a>
+        <a href="/contact" class="hover:text-blue-500">Contact</a>
         <button id="toggleDarkMode" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-lg">🌙</button>
       </div>
       <!-- Mobile menu button -->
@@ -38,7 +29,7 @@
       <a href="/about" class="hover:text-blue-500">About</a>
       <a href="/project" class="hover:text-blue-500">Projects</a>
       <a href="#resume" class="hover:text-blue-500">Resume</a>
-      <a href="#contact" class="hover:text-blue-500">Contact</a>
+      <a href="/contact" class="hover:text-blue-500">Contact</a>
       <button id="toggleDarkModeMobile" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-lg w-full text-left">🌙</button>
     </div>
   </nav>
@@ -105,7 +96,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20">
+  <!-- <section id="contact" class="py-20">
     <div class="max-w-5xl mx-auto px-6 text-center" data-aos="fade-up">
       <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
       <form action="/contact" method="POST" class="max-w-md w-full mx-auto space-y-4">
@@ -115,7 +106,7 @@
         <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Send Message</button>
       </form>
     </div>
-  </section>
+  </section> -->
 
   <!-- Footer -->
   <footer class="py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm">
@@ -202,4 +193,4 @@
 </script>
 
 </body>
-</html>
+{% endblock %}
