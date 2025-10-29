@@ -56,10 +56,10 @@
 
     <!-- Desktop Menu -->
     <ul class="hidden md:flex space-x-8 text-gray-100 font-medium">
+      <li><a href="{{ url_for('about') }}" class="hover:text-cyan-400 transition">About</a></li>
       <li><a href="{{ url_for('home') }}" class="hover:text-cyan-400 transition">Home</a></li>
       <li><a href="{{ url_for('project') }}" class="hover:text-cyan-400 transition">Projects</a></li>
       <li><a href="{{ url_for('contact') }}" class="hover:text-cyan-400 transition">Contact</a></li>
-      <li><a href="{{ url_for('about') }}" class="hover:text-cyan-400 transition">About</a></li>
     </ul>
 
     <!-- Dark Mode Toggle (optional) -->
@@ -76,10 +76,10 @@
   <!-- Mobile Menu -->
   <div id="mobileMenu" class="hidden md:hidden bg-black/90 border-t border-cyan-500/20">
     <ul class="flex flex-col items-center py-4 space-y-4 text-gray-100 font-medium">
+      <li><a href="{{ url_for('about') }}" class="hover:text-cyan-400 transition">About</a></li>
       <li><a href="{{ url_for('home') }}" class="hover:text-cyan-400 transition">Home</a></li>
       <li><a href="{{ url_for('project') }}" class="hover:text-cyan-400 transition">Projects</a></li>
       <li><a href="{{ url_for('contact') }}" class="hover:text-cyan-400 transition">Contact</a></li>
-      <li><a href="{{ url_for('about') }}" class="hover:text-cyan-400 transition">About</a></li>
     </ul>
   </div>
 </nav>
@@ -144,3 +144,4 @@
   </script>
 </body>
 </html>
+
