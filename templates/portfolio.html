@@ -2,195 +2,129 @@
 {% block title %}Home | Krish Gupta{% endblock %}
 {% block content %}
 
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
-</head>
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+<style>
+  /* 🌈 Animated Gradient Background */
+  @keyframes bgPulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
-  <!-- Navbar -->
-  <nav class="fixed top-0 w-full bg-white dark:bg-gray-800 shadow-md z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold font-serif">Krish Gupta</h1>
-      <div class="hidden md:flex items-center gap-6">
-        <a href="/about" class="hover:text-blue-500">About</a>
-        <a href="/project" class="hover:text-blue-500">Projects</a>
-        <a href="#resume" class="hover:text-blue-500">Resume</a>
-        <a href="/contact" class="hover:text-blue-500">Contact</a>
-        <button id="toggleDarkMode" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-lg">🌙</button>
+  body {
+    background: radial-gradient(circle at center, rgba(0,255,255,0.15), rgba(0,0,0,0.95));
+    background-attachment: fixed;
+  }
+
+  .animated-bg {
+    background: linear-gradient(270deg, rgba(0,255,255,0.05), rgba(0,128,255,0.08), rgba(0,0,0,0.85));
+    background-size: 400% 400%;
+    animation: bgPulse 15s ease infinite;
+  }
+
+  .glow-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  }
+
+  .neon-text {
+    text-shadow: 0 0 12px rgba(0,255,255,0.8);
+  }
+</style>
+
+<!-- 🌟 Hero Section -->
+<section id="home" class="min-h-[470px] flex items-center justify-center text-center px-6 pt-24 animated-bg text-white">
+  <div data-aos="fade-up" data-aos-duration="1000">
+    <img src="static/assets/passport.jpg" alt="Profile"
+         class="w-40 h-40 mx-auto rounded-full shadow-xl mb-6 border-4 border-cyan-400 hover:scale-105 transition-transform duration-300" />
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 neon-text">Hey, I'm Krish 👋</h2>
+    <p class="text-md sm:text-lg md:text-xl mb-6">
+      A Computer Engineer passionate about <span class="text-cyan-400">AI/ML</span>, Frontend Development, and Automation.
+    </p>
+    <a href="#projects" class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-2 rounded-lg hover:scale-110 transition-transform duration-300 shadow-lg">
+      View My Work
+    </a>
+  </div>
+</section>
+
+<!-- 👨‍💻 About Section -->
+<section id="about" class="py-20 text-white animated-bg border-y border-cyan-400/20">
+  <div class="max-w-5xl mx-auto px-6 text-center" data-aos="fade-up" data-aos-duration="1200">
+    <h2 class="text-3xl font-bold mb-6 neon-text">About Me</h2>
+    <p class="text-lg leading-relaxed text-gray-200">
+      I'm a Third-Year Computer Engineering student at Bharati Vidyapeeth College of Engineering, Pune.
+      I love building smart systems integrating <span class="text-cyan-400">IoT</span>, 
+      <span class="text-pink-400">Python</span>,
+      <span class="text-blue-400">Machine Learning</span>, and 
+      <span class="text-green-400">Automation</span>.
+      When I'm not coding, you can find me exploring tech trends, hiking, or playing cricket 🏏.
+    </p>
+  </div>
+</section>
+
+<!-- 🚀 Projects Section -->
+<section id="projects" class="py-20 text-white animated-bg border-b border-cyan-400/20">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-12 text-cyan-400 neon-text">Projects</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <!-- Project 1 -->
+      <div class="bg-[rgba(0,0,0,0.6)] p-6 rounded-xl shadow-xl glow-card transition-transform duration-300 backdrop-blur-md border border-cyan-400/20" data-aos="fade-right">
+        <img src="static/assets/cricket.jpg" alt="Project 1" class="rounded-lg mb-4 object-cover mx-auto" />
+        <h3 class="text-xl font-semibold mb-2">
+          <a href="https://cricket-score-prediction-1-dy0s.onrender.com/" target="_blank" class="hover:text-cyan-400 transition-all duration-300">
+            ODI Cricket Score Prediction ↗
+          </a>
+        </h3>
+        <p class="text-gray-300">Predicts cricket match scores using historical data and ML algorithms.</p>
       </div>
-      <!-- Mobile menu button -->
-      <button id="menuBtn" class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-lg">☰</button>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden flex-col gap-4 px-6 pb-4 md:hidden">
-      <a href="/about" class="hover:text-blue-500">About</a>
-      <a href="/project" class="hover:text-blue-500">Projects</a>
-      <a href="#resume" class="hover:text-blue-500">Resume</a>
-      <a href="/contact" class="hover:text-blue-500">Contact</a>
-      <button id="toggleDarkModeMobile" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-lg w-full text-left">🌙</button>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="min-h-[470px] flex items-center justify-center text-center px-6 pt-24">
-    <div data-aos="fade-up">
-      <img src="static/assets/passport.jpg" alt="Profile" class="w-40 h-40 mx-auto rounded-full shadow-lg mb-6 hover:scale-105 transition-transform duration-300" />
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">Hey, I'm Krish 👋</h2>
-      <p class="text-md sm:text-lg md:text-xl mb-6">A Computer Engineer passionate about AI/ML, Frontend Development, and Automation.</p>
-      <a href="#projects" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">View My Work</a>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
-    <div class="max-w-5xl mx-auto px-6 text-center" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <p class="text-lg leading-relaxed">
-        I'm a Third Year Computer Engineering student at Bharati Vidyapeeth College of Engineering, Pune.
-        I love building smart systems integrating IoT, Python, Machine Learning, Data Science, Frontend development and automation.
-        When I'm not coding, you can find me exploring new tech trends, hiking, or playing Cricket.
-      </p>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="py-20">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-12">Projects</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-right">
-          <img src="static/assets/cricket.jpg" alt="Project 1" class="rounded-lg mb-4 object-cover mx-auto" />
-          <h3 class="text-xl font-semibold mb-2"><a href="https://cricket-score-prediction-1-dy0s.onrender.com/" target="_blank" class="hover:text-blue-500">ODI Cricket Score Prediction Website ↗</a></h3>
-          <p>Predicts cricket match scores using historical data and machine learning.</p>
-        </div>
-
-        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-up">
-          <img src="static/assets/OIP.webp" alt="Project 2" class="rounded-lg mb-4 object-cover mx-auto" />
-          <h3 class="text-xl font-semibold mb-2 "><a href="https://kg0420.github.io/Jay-Ambe-Broadband/ " class="hover:text-blue-500">Jay Ambe Broadband service ↗</a></h3>
-          <p>This is the project I made for my jijas broadband service business.</p>
-        </div>
-
-        <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg" data-aos="fade-left">
-          <img src="static/assets/Fraud-Detection-Thumbnail.jpg" alt="Project 3" class="rounded-lg mb-4" />
-          <h3 class="text-xl font-semibold mb-2"><a href="https://razorpay-fraud-detection-kg.onrender.com/" target="_blank" class="hover:text-blue-500">Razorpay Fraud Detection ML Model ↗</a></h3>
-          <p>Detects fraudulent transactions using machine learning algorithms.</p>
-        </div>
+      <!-- Project 2 -->
+      <div class="bg-[rgba(0,0,0,0.6)] p-6 rounded-xl shadow-xl glow-card transition-transform duration-300 backdrop-blur-md border border-cyan-400/20" data-aos="fade-up">
+        <img src="static/assets/OIP.webp" alt="Project 2" class="rounded-lg mb-4 object-cover mx-auto" />
+        <h3 class="text-xl font-semibold mb-2">
+          <a href="https://kg0420.github.io/Jay-Ambe-Broadband/" target="_blank" class="hover:text-cyan-400 transition-all duration-300">
+            Jay Ambe Broadband Service ↗
+          </a>
+        </h3>
+        <p class="text-gray-300">Website built for my jija’s broadband business with a modern UI and responsive design.</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Resume Section -->
-  <section id="resume" class="py-20 bg-gray-50 dark:bg-gray-800">
-    <div class="max-w-5xl mx-auto px-6 text-center" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-6">Resume & Achievements</h2>
-      <p class="mb-6">Smart India Hackathon(2024) Finalist | AI & ML | First Rank in internal Smart India Hackathon</p>
-      <a href="https://raw.githubusercontent.com/kg0420/My-Portfolio/main/templates/KrishGupta_InternshalaResume.pdf"
-         class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-         target="_blank">
-         Download Resume
-      </a>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <!-- <section id="contact" class="py-20">
-    <div class="max-w-5xl mx-auto px-6 text-center" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
-      <form action="/contact" method="POST" class="max-w-md w-full mx-auto space-y-4">
-        <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded-lg border dark:bg-gray-800 dark:border-gray-700" required />
-        <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded-lg border dark:bg-gray-800 dark:border-gray-700" required />
-        <textarea name="message" placeholder="Your Message" class="w-full p-3 rounded-lg border dark:bg-gray-800 dark:border-gray-700" rows="4" required></textarea>
-        <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Send Message</button>
-      </form>
-    </div>
-  </section> -->
-
-  <!-- Footer -->
-  <footer class="py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm">
-    © 2025 Krish Gupta
-    <div class="flex justify-center mt-2 flex-wrap gap-3">
-
-      <a href="https://wa.me/7219570360" target="_blank" class="flex items-center gap-1 hover:text-blue-500 hover:scale-110 transition-transform duration-300">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6 hover:scale-110 transition-transform duration-300" />
-        WhatsApp
-      </a>
-
-      <a href="https://github.com/kg0420" target="_blank" class="flex items-center gap-1 hover:text-blue-500 hover:scale-110 transition-transform duration-300">
-        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="w-6 h-6 hover:scale-110 transition-transform duration-300" alt="GitHub" />
-        GitHub
-      </a>
-
-      <a href="https://www.linkedin.com/in/krish-gupta-2ab03829b/" target="_blank" class="flex items-center gap-1 hover:text-blue-500 hover:scale-110 transition-transform duration-300">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="w-6 h-6 hover:scale-110 transition-transform duration-300" alt="LinkedIn" />
-        LinkedIn
-      </a>
-    </div>
-  </footer>
-
-    <!-- {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      <div class="fixed top-24 right-6 z-50">
-        {% for category, message in messages %}
-          <div class="mb-2 px-4 py-2 rounded-lg text-white {% if category == 'success' %}bg-green-500{% else %}bg-red-500{% endif %}">
-            {{ message }}
-          </div>
-        {% endfor %}
+      <!-- Project 3 -->
+      <div class="bg-[rgba(0,0,0,0.6)] p-6 rounded-xl shadow-xl glow-card transition-transform duration-300 backdrop-blur-md border border-cyan-400/20" data-aos="fade-left">
+        <img src="static/assets/Fraud-Detection-Thumbnail.jpg" alt="Project 3" class="rounded-lg mb-4" />
+        <h3 class="text-xl font-semibold mb-2">
+          <a href="https://razorpay-fraud-detection-kg.onrender.com/" target="_blank" class="hover:text-cyan-400 transition-all duration-300">
+            Razorpay Fraud Detection ML Model ↗
+          </a>
+        </h3>
+        <p class="text-gray-300">Detects fraudulent transactions using cutting-edge ML techniques.</p>
       </div>
-    {% endif %}
-    {% endwith %} -->
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    </div>
+  </div>
+</section>
+
+<!-- 🏆 Resume Section -->
+<section id="resume" class="py-20 text-white animated-bg border-t border-cyan-400/20">
+  <div class="max-w-5xl mx-auto px-6 text-center" data-aos="zoom-in">
+    <h2 class="text-3xl font-bold mb-6 neon-text">Resume & Achievements</h2>
+    <p class="mb-6 text-lg text-gray-200">
+      <span class="text-cyan-400 font-semibold">Smart India Hackathon (2024)</span> Finalist |
+      AI & ML | 1st Rank in Internal Hackathon 🚀
+    </p>
+    <a href="https://raw.githubusercontent.com/kg0420/My-Portfolio/main/templates/KrishGupta_InternshalaResume.pdf"
+       class="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-2 rounded-lg hover:scale-110 transition-transform duration-300 shadow-lg"
+       target="_blank">
+       Download Resume
+    </a>
+  </div>
+</section>
+
+<!-- 🌙 AOS + Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  tailwind.config = {
-    darkMode: 'class',
-  };
-
-  AOS.init();
-
-  // Select elements
-  const toggleBtn = document.getElementById('toggleDarkMode');
-  const toggleBtnMobile = document.getElementById('toggleDarkModeMobile');
-  const html = document.documentElement;
-
-  // Load saved theme from localStorage
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    html.classList.add('dark');
-  } else {
-    html.classList.remove('dark');
-  }
-
-  // Update icon based on current mode
-  function updateIcons() {
-    const isDark = html.classList.contains('dark');
-    toggleBtn.textContent = isDark ? '☀️' : '🌙';
-    toggleBtnMobile.textContent = isDark ? '☀️' : '🌙';
-  }
-
-  updateIcons(); // Set correct icons on load
-
-  // Toggle dark mode and save preference
-  function toggleDark() {
-    html.classList.toggle('dark');
-    const theme = html.classList.contains('dark') ? 'dark' : 'light';
-    localStorage.setItem('theme', theme);
-    updateIcons();
-  }
-
-  toggleBtn.addEventListener('click', toggleDark);
-  toggleBtnMobile.addEventListener('click', toggleDark);
-
-  // Mobile menu toggle
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
+  AOS.init({ duration: 1000, once: true });
 </script>
 
-</body>
 {% endblock %}
