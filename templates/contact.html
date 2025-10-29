@@ -1,30 +1,75 @@
 {% extends "base.html" %}
 {% block title %}Contact | Krish Gupta{% endblock %}
 {% block content %}
-<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
 
-  <div class="min-h-screen flex flex-col justify-center items-center px-4">
-    <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
-    <form action="/contact" method="POST" class="max-w-md w-full mx-auto space-y-4 bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
-      <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded-lg border dark:bg-gray-700 dark:border-gray-600" required />
-      <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded-lg border dark:bg-gray-700 dark:border-gray-600" required />
-      <textarea name="message" placeholder="Your Message" class="w-full p-3 rounded-lg border dark:bg-gray-700 dark:border-gray-600" rows="4" required></textarea>
-      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Send Message</button>
-    </form>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
-    <!-- Flash messages -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        <div class="mt-4">
-          {% for category, message in messages %}
-            <div class="px-4 py-2 rounded-lg text-white {% if category == 'success' %}bg-green-500{% else %}bg-red-500{% endif %}">
-              {{ message }}
-            </div>
-          {% endfor %}
-        </div>
-      {% endif %}
-    {% endwith %}
-  </div>
+  <section class="min-h-screen flex flex-col justify-center items-center px-4 relative overflow-hidden">
+
+    <!-- Background glow -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,255,0.25),transparent_70%)]"></div>
+
+    <div class="relative z-10 text-center" data-aos="fade-up" data-aos-duration="800">
+      <h2 class="text-4xl font-bold mb-8">Get in Touch 💬</h2>
+
+      <form 
+        action="/contact" 
+        method="POST" 
+        class="max-w-md w-full mx-auto space-y-5 bg-gray-100 dark:bg-gray-800/80 p-8 rounded-2xl shadow-2xl backdrop-blur-md border border-gray-200 dark:border-gray-700 transition-transform duration-500 hover:scale-[1.02]"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      >
+        <input 
+          type="text" 
+          name="name" 
+          placeholder="Your Name" 
+          class="w-full p-3 rounded-lg border dark:bg-gray-700 dark:border-gray-600 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition"
+          required 
+        />
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Your Email" 
+          class="w-full p-3 rounded-lg border dark:bg-gray-700 dark:border-gray-600 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition"
+          required 
+        />
+        <textarea 
+          name="message" 
+          placeholder="Your Message" 
+          class="w-full p-3 rounded-lg border dark:bg-gray-700 dark:border-gray-600 focus:ring-2 focus:ring-cyan-400 focus:outline-none transition" 
+          rows="4" 
+          required
+        ></textarea>
+        <button 
+          type="submit" 
+          class="bg-cyan-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-cyan-700 active:scale-95 transition-transform duration-200"
+        >
+          Send Message ✉️
+        </button>
+      </form>
+
+      <!-- Flash messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="mt-6" data-aos="fade-in" data-aos-delay="300">
+            {% for category, message in messages %}
+              <div class="px-4 py-2 rounded-lg text-white text-center font-medium animate-bounce 
+                          {% if category == 'success' %}bg-green-500{% else %}bg-red-500{% endif %}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+    </div>
+
+  </section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 700, once: true });
+  </script>
 
 </body>
+
 {% endblock %}
