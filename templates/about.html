@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Krish Gupta</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
+{% extends "base.html" %}
+{% block title %}About | Krish Gupta{% endblock %}
+{% block content %}
 
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
 
   <!-- Navbar -->
   <nav class="p-4 bg-gray-100 dark:bg-gray-800 shadow-md flex justify-between items-center flex-wrap">
-    <h1 class="text-2xl font-bold mb-2 md:mb-0">Krish Gupta</h1>
+    <h1 class="text-2xl font-bold mb-2 md:mb-0 font-serif">Krish Gupta</h1>
     <div class="space-x-4 text-sm md:text-base">
       <a href="/" class="hover:text-blue-500 transition">Home</a>
       <a href="/about" class="text-blue-600 font-semibold hover:text-blue-500 transition">About</a>
       <a href="/project" class="hover:text-blue-500 transition">Projects</a>
-      <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
+      <a href="/contact" class="hover:text-blue-500 transition">Contact</a>
     </div>
   </nav>
 
@@ -102,9 +96,26 @@
 
   </section>
 
-  <footer class="py-4 bg-gray-100 dark:bg-gray-800 text-center text-sm">
+  <footer class="py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm">
     © 2025 Krish Gupta
+    <div class="flex justify-center mt-2 flex-wrap gap-3">
+
+      <a href="https://wa.me/7219570360" target="_blank" class="flex items-center gap-1 hover:text-blue-500 hover:scale-110 transition-transform duration-300">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6 hover:scale-110 transition-transform duration-300" />
+        WhatsApp
+      </a>
+
+      <a href="https://github.com/kg0420" target="_blank" class="flex items-center gap-1 hover:text-blue-500 hover:scale-110 transition-transform duration-300">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="w-6 h-6 hover:scale-110 transition-transform duration-300" alt="GitHub" />
+        GitHub
+      </a>
+
+      <a href="https://www.linkedin.com/in/krish-gupta-2ab03829b/" target="_blank" class="flex items-center gap-1 hover:text-blue-500 hover:scale-110 transition-transform duration-300">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="w-6 h-6 hover:scale-110 transition-transform duration-300" alt="LinkedIn" />
+        LinkedIn
+      </a>
+    </div>
   </footer>
 
 </body>
-</html>
+{% endblock %}
