@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Krish Gupta | Portfolio{% endblock %}</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+  <!-- 🌐 Navbar (common) -->
+  <nav class="fixed top-0 w-full bg-white dark:bg-gray-800 shadow-md z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Krish Gupta</h1>
+      <div class="hidden md:flex gap-6">
+        <a href="/" class="hover:text-blue-500">Home</a>
+        <a href="/about" class="hover:text-blue-500">About</a>
+        <a href="/project" class="hover:text-blue-500">Projects</a>
+        <a href="/contact" class="hover:text-blue-500">Contact</a>
+        <button id="toggleDarkMode" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-lg">🌙</button>
+      </div>
+      <button id="menuBtn" class="md:hidden p-2 bg-gray-200 dark:bg-gray-700 rounded-lg">☰</button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden flex-col gap-4 px-6 pb-4 md:hidden">
+      <a href="/" class="hover:text-blue-500">Home</a>
+      <a href="/about" class="hover:text-blue-500">About</a>
+      <a href="/project" class="hover:text-blue-500">Projects</a>
+      <a href="/contact" class="hover:text-blue-500">Contact</a>
+      <button id="toggleDarkModeMobile" class="bg-gray-200 dark:bg-gray-700 p-2 rounded-lg w-full text-left">🌙</button>
+    </div>
+  </nav>
+
+  <!-- 🔽 Dynamic Page Content -->
+  <main class="pt-24">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- 🦶 Footer (common) -->
+  <footer class="py-6 bg-gray-100 dark:bg-gray-800 text-center text-sm mt-10">
+    © 2025 Krish Gupta
+    <div class="flex justify-center mt-2 gap-3 flex-wrap">
+      <a href="https://wa.me/7219570360" target="_blank" class="hover:text-blue-500">WhatsApp</a>
+      <a href="https://github.com/kg0420" target="_blank" class="hover:text-blue-500">GitHub</a>
+      <a href="https://www.linkedin.com/in/krish-gupta-2ab03829b/" target="_blank" class="hover:text-blue-500">LinkedIn</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const html = document.documentElement;
+    const toggleBtn = document.getElementById('toggleDarkMode');
+    const toggleBtnMobile = document.getElementById('toggleDarkModeMobile');
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') html.classList.add('dark');
+    else html.classList.remove('dark');
+
+    function updateIcons() {
+      const isDark = html.classList.contains('dark');
+      if (toggleBtn) toggleBtn.textContent = isDark ? '☀️' : '🌙';
+      if (toggleBtnMobile) toggleBtnMobile.textContent = isDark ? '☀️' : '🌙';
+    }
+    updateIcons();
+
+    function toggleDark() {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+      updateIcons();
+    }
+
+    if (toggleBtn) toggleBtn.addEventListener('click', toggleDark);
+    if (toggleBtnMobile) toggleBtnMobile.addEventListener('click', toggleDark);
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  </script>
+</body>
+</html>
